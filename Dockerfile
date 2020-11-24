@@ -24,13 +24,17 @@ RUN chmod +x /etc/rc.local \
 && cp /usr/local/setup/startup.sh /usr/local/app/startup.sh \ 
 && cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \ 
 && echo "Asia/Shanghai" > /etc/timezone \ 
+&& yum -y install net-tools \ 
 && yum -y install telnet \ 
 && yum -y install fontconfig \ 
 && yum -y install kde-l10n-Chinese \ 
 && yum -y install glibc-common \ 
+&& yum -y install epel-release \ 
 && yum clean all \ 
-&& rm -rf /var/cache/yum/* \
-&& localedef -c -f UTF-8 -i zh_CN zh_CN.utf8 
+&& rm -rf /var/cache/yum/* \ 
+&& localedef -c -f UTF-8 -i zh_CN zh_CN.utf8 \ 
+&& echo "run finish!"
+
 
 ENV LC_ALL zh_CN.UTF-8
 

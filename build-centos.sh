@@ -1,1 +1,1 @@
-docker build -t centos76:1.0 .
+docker build --no-cache -t zhangzlyuyx/centos76:1.0 .
