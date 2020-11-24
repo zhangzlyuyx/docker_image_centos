@@ -1,0 +1,1 @@
+docker build -t centos76:1.0 .
